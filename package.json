@@ -1,0 +1,33 @@
+{
+    "name": "occt",
+    "version": "0.0.1",
+    "description": "Online Compiler Collection Tool",
+    "bin": {
+        "occt": "index.js"
+    },
+    "dependencies": {
+        "alerts-in-cli": "^2.0.1",
+        "axios": "^0.19.2",
+        "chalk": "^4.1.0",
+        "form-data": "^4.0.4",
+        "meow": "^7.0.0",
+        "ora": "^4.0.4",
+        "solverjs": "^3.31.16"
+    },
+    "keywords": [
+        "occ",
+        "Online Compiler Collection",
+        "online compiler collection",
+        "online cc",
+        "online code compiler",
+        "online compile code"
+    ],
+    "license": "GPL-3.0-only",
+    "main": "index.js",
+    "repository": "suryapratapsinghsuryavanshi",
+    "author": {
+        "name": "Suryapratap Singh Suryavanshi",
+        "email": "suryprtaps@gmail.com",
+        "url": "https://suryapratap.netlify.app"
+    }
+}
