@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "occt"
+version = "0.0.1"
+description = "Online Compiler Collection Tool"
+authors = [
+  { name="Suryapratap Singh Suryavanshi", email="suryprtaps@gmail.com" }
+]
+dependencies = []
+
+[project.scripts]
+occt = "occt.__main__:main"
+
+
+[tool.setuptools.packages.find]
+include = ["occt"]
+exclude = ["node_modules*"]
