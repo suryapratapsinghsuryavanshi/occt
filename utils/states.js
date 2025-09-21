@@ -45,7 +45,7 @@ const uploadingFileCompile = async (flags) => {
         spinner.fail();
         handelError({
             type: "error",
-            msg: error,
+            msg: error.response.data.error || error,
             name: "API Call fail"
         });
         process.exit(1);
@@ -87,7 +87,7 @@ const uploadingFileInterprate = async (flags, cli = {}) => {
         spinner.fail();
         handelError({
             type: "error",
-            msg: error,
+            msg: error.response.data.error || error,
             name: "API Call fail"
         });
         process.exit(1);

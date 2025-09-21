@@ -95,6 +95,25 @@ Compiled file: <YOUR_COMPILED_FILE_WITH_CUSTOM_NAME>
 # automatilcy download to your system you can run directly.
 ```
 
+- Passing script language file with cUrl 
+```bash
+curl.exe -F "file=@__YOUR__FILE__" http://localhost:8000/
+
+# Output:
+✅ Execution Done
+---
+Hello, World!
+---
+```
+
+- Passing compailed language file with cUrl 
+```bash
+curl.exe -F "file=@__YOUR__FILE__" http://localhost:8000/ -o YOUR_OUTPUT_FILE.EXT
+
+# Output:
+# Your output file will be downloaded automatically and saved as YOUR_OUTPUT_FILE.EXT
+```
+
 <hr>
 
 Thank You :)
