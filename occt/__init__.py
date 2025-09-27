@@ -2,6 +2,8 @@
 
 # Read package.json file for description and version
 import json
+from .states import uploading_file_compile, uploading_file_interprate
+from pathlib import Path
 
 # file path to package.json
 PACKAGE_JSON_PATH = "package.json"
@@ -37,6 +39,24 @@ def show_banner():
     print(f"{DIM}{description}{RESET}")
     print()
 
+def show_extra_options(args, console, print_help):
+    if args.version:
+        console.print(f"Version: {version}", style="cyan")
+    elif args.compile:
+        flags_compile = {
+            "compile": args.compile,
+            "outputFile": args.output,
+            "args": args.args
+        }
+        uploading_file_compile(flags_compile)
+    elif args.interpreted:
+        flags_interpreted = {
+            "interpreted": args.interpreted,
+            "args": args.args
+        }
+        uploading_file_interprate(flags_interpreted, cli={"input": ["extra"], "flags": {"args": True}})
+    else:
+        print_help()
 
 def run():
     show_banner()
