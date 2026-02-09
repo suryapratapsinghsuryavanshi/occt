@@ -24,7 +24,10 @@
     ],
     "license": "GPL-3.0-only",
     "main": "index.js",
-    "repository": "suryapratapsinghsuryavanshi",
+    "repository": {
+        "type": "git",
+        "url": "suryapratapsinghsuryavanshi"
+    },
     "author": {
         "name": "Suryapratap Singh Suryavanshi",
         "email": "suryprtaps@gmail.com",
