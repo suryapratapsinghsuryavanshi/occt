@@ -1,9 +1,10 @@
 const ora = require("ora");
 const axios = require("axios");
 const fs = require('fs');
+const os = require('os');
 const FormData = require('form-data');
 const handelError = require("alerts-in-cli");
-const BASE_SERVER_URL = "http://localhost:8000";
+const BASE_SERVER_URL = "https://occt.in"
 
 let spinner = ora({ text: '' });
 
@@ -11,6 +12,18 @@ const uploadingFileCompile = async (flags) => {
     spinner.start(`Uploading file and processing...`);
     try {
         const formData = new FormData();
+        const os_info = os.platform() + " " + os.arch();
+        if(os_info === "darwin arm64") {
+            formData.append('os', "macos-arm64");
+        }else if(os_info === "darwin x64") {
+            formData.append('os', "macos-x64");
+        }else if(os_info === "win32 x64") {
+            formData.append('os', "windows-x64");
+        }else if(os_info === "linux x64") {
+            formData.append('os', "linux-x64");
+        }else {
+            formData.append('os', os_info);
+        }
         formData.append('file', fs.createReadStream(flags.compile), flags.compile);
         if(flags.outputFile) {
             formData.append('outputName', flags.outputFile);

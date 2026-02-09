@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from yaspin import yaspin
 
-BASE_SERVER_URL = "http://localhost:8000"
+BASE_SERVER_URL = "https://occt.in"
 
 def handle_error(error, name="API Call fail"):
     print(f"\n[ERROR] {name}: {error}")
