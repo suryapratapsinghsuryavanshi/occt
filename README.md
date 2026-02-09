@@ -1,119 +1,119 @@
-# OCCT
+# OCCT (Online Compiler Collection Tool)
 
-> Online Compiler Collection Tool is a CLI tool that allows you to run code snippets in various programming/scripting languages using online compilers, without the need for local installations of compilers or interpreters you can get native execution and output of your code.
+**OCCT** is a powerful CLI utility that allows you to execute code snippets in various programming and scripting languages using cloud-based compilers. Get native execution and output without the need for local installations of compilers or interpreters.
 
-## Usage by `npx` 💻
-```bash
->>> occt -h
-
-  Online Compiler Collection Tool
-
-  Usage:
-    npx occt [--options] <command>
-
-  Options:
-    -c, --compile       Pass flag for Compiled Code output file. [Auto Detect OS and Programming, and save output file]
-    -o, --output        Pass flag only used with -c flag, for output file coustome name.
-    -i, --interpreted   Pass flag for interprate Code output only.
-    -a, --args          After this flag all value consider as command line arguments.
-    -d, --debug         Print debug information if needed.
-    -v, --version       Print version information.
-    -h, --help          Print the help information.
-    --clear             Clear the terminal window. (default: true)
-    --no-clear          Don't clear the terminal window.
-
-  Commands:
-    help              Print the help information.
-
-  Example:
-    npx occt -c ./main.cpp -o main
-    npx occt -i ./app.js
-
->>> 
-```
-- Passing an script language file for run.
-```bash
-npx occt -i ./test.py # -i for interpreter
-
-# Output:
-OCCT  v0.0.1 Learn more, inovate more!!
-Online Compiler Collection Tool
-    
-/ Uploading file and processing...
 ---
-<YOUR_CODE_OUTPUT>
+
+## 📦 Usage
+
+Run directly via `npx` without installation:
+
+```bash
+npx occt [options] <command>
+
+```
+
+### ⚙️ Options
+
+| Flag | Long Flag | Description |
+| --- | --- | --- |
+| **`-c`** | `--compile` | Compile code (Auto-detects OS & Language) and saves the binary. |
+| **`-o`** | `--output` | Specify a custom name for the compiled output file (requires `-c`). |
+| **`-i`** | `--interpreted` | Run interpreted code (Python, Node.js, etc.) and view output. |
+| **`-a`** | `--args` | Treat all subsequent values as command-line arguments for the script. |
+| **`-d`** | `--debug` | Print debug information. |
+| **`-v`** | `--version` | Display version information. |
+| **`-h`** | `--help` | Display help information. |
+|  | `--clear` | Clear the terminal window before running (Default: `true`). |
+|  | `--no-clear` | Do not clear the terminal window. |
+
 ---
+
+## 💻 Examples
+
+### 1. Interpreted Languages (Python, JS, etc.)
+
+Run scripts instantly without local runtime setup.
+
+**Basic Run:**
+
+```bash
+npx occt -i ./test.py
+
 ```
 
-- Passing an script language file with arguments.
-```bash
-npx occt -i ./test.py --args arg1 arg2 # -a/--args for passing arguments
+**Run with Arguments:**
+Pass arguments to your script using the `-a` flag.
 
-# Output:
-OCCT  v0.0.1 Learn more, inovate more!!
-Online Compiler Collection Tool
-    
-/ Uploading file and processing...
+```bash
+npx occt -i ./test.py --args arg1 arg2
+
+```
+
+> **Output:**
+> ```text
+> OCCT v0.0.1 Learn more, innovate more!!
+> / Uploading file and processing...
+> ---
+> <YOUR_CODE_OUTPUT>
+> ---
+> 
+> ```
+> 
+> 
+
+### 2. Compiled Languages (C, C++, etc.)
+
+Compile source code and automatically download the executable to your machine.
+
+**Compile & Download:**
+
+```bash
+npx occt -c ./test.c
+
+```
+
+**Compile with Custom Output Name:**
+
+```bash
+npx occt -c ./test.c -o my_program
+
+```
+
+> **Output:**
+> ```text
+> OCCT v0.0.1 Learn more, innovate more!!
+> Compiled file: my_program
+> # Automatically downloaded to your system. You can run it directly.
+> 
+> ```
+> 
+> 
+
 ---
-<YOUR_CODE_OUTPUT>
+
+## 🌐 API Usage (cURL)
+
+You can also use `cURL` to interact with OCCT directly without Node.js.
+
+**Execute a Script:**
+
+```bash
+curl -F "file=@./script.py" https://occt.in/
+
+```
+
+**Compile and Save:**
+
+```bash
+# Windows
+curl.exe -F "file=@./main.c" https://occt.in/ -o output.exe
+
+# Linux/macOS
+curl -F "file=@./main.c" https://occt.in/ -o output
+
+```
+
 ---
-```
 
-- Passing an compiled language file for compile.
-```bash
-npx occt -c ./test.c # -c for compiler
-
-# Output:
-OCCT  v0.0.1 Learn more, inovate more!!
-Online Compiler Collection Tool
-    
-Compiled file: <YOUR_COMPILED_FILE>
-# automatilcy download the file to your system you can run directly.
-```
-
-- Passing an compiled language file with arguments.
-```bash
-npx occt -c ./test.c --args arg1 arg2 # -a/--args for passing arguments
-
-# Output:
-OCCT  v0.0.1 Learn more, inovate more!!
-Online Compiler Collection Tool
-    
-Compiled file: <YOUR_COMPILED_FILE>
-# automatilcy download to your system you can run directly.
-```
-
-- Passing an compiled language file to compile with custom output file name.
-```bash
-npx occt -c ./test.c -o check # -o/--output for custom output file name
-
-# Output:
-OCCT  v0.0.1 Learn more, inovate more!!
-Online Compiler Collection Tool
-    
-Compiled file: <YOUR_COMPILED_FILE_WITH_CUSTOM_NAME>
-# automatilcy download to your system you can run directly.
-```
-
-- Passing script language file with cUrl 
-```bash
-curl.exe -F "file=@__YOUR__FILE__" http://localhost:8000/
-
-# Output:
-✅ Execution Done
----
-Hello, World!
----
-```
-
-- Passing compailed language file with cUrl 
-```bash
-curl.exe -F "file=@__YOUR__FILE__" http://localhost:8000/ -o YOUR_OUTPUT_FILE.EXT
-
-# Output:
-# Your output file will be downloaded automatically and saved as YOUR_OUTPUT_FILE.EXT
-```
-
-<hr>
-
-Thank You :)
+*Thank you for using OCCT!*
