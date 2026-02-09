@@ -1,6 +1,6 @@
 {
     "name": "occt",
-    "version": "0.0.1",
+    "version": "v1.0.0",
     "description": "Online Compiler Collection Tool",
     "bin": {
         "occt": "index.js"
