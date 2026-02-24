@@ -4,12 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "occt"
-version = "0.0.1"
+version = "1.1.0"
 description = "Online Compiler Collection Tool"
 authors = [
   { name="Suryapratap Singh Suryavanshi", email="suryprtaps@gmail.com" }
 ]
 dependencies = []
+readme = "README.md"
 
 [project.scripts]
 occt = "occt.__main__:main"
