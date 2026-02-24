@@ -1,17 +1,21 @@
 # occt/__init__.py
 
 # Read package.json file for description and version
-import json
+import tomllib
 from .states import uploading_file_compile, uploading_file_interprate
 from pathlib import Path
 
-# file path to package.json
-PACKAGE_JSON_PATH = "package.json"
 package_info = {}
-with open(PACKAGE_JSON_PATH, "r") as f:
-    package_info = json.load(f)
-    description = package_info.get("description", "No description available.")
-    version = package_info.get("version", "0.0.0")
+import tomllib
+
+PYPROJECT_PATH = "pyproject.toml"
+
+with open(PYPROJECT_PATH, "rb") as f:  # IMPORTANT: rb mode
+    data = tomllib.load(f)
+
+project = data.get("project", {})
+description = project.get("description", "No description available.")
+version = project.get("version", "0.0.0")
 
 
 # ANSI color codes
