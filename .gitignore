@@ -1,7 +1,7 @@
 node_modules
 venv
 .DS_Store
-.egg-info
+*.egg-info
 */__pycache__/*
 build
 dist

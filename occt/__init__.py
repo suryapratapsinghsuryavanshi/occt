@@ -1,21 +1,11 @@
 # occt/__init__.py
 
 # Read package.json file for description and version
-import tomllib
 from .states import uploading_file_compile, uploading_file_interprate
 from pathlib import Path
 
-package_info = {}
-import tomllib
-
-PYPROJECT_PATH = "pyproject.toml"
-
-with open(PYPROJECT_PATH, "rb") as f:  # IMPORTANT: rb mode
-    data = tomllib.load(f)
-
-project = data.get("project", {})
-description = project.get("description", "No description available.")
-version = project.get("version", "0.0.0")
+description = "Online Compiler Collection Tool"
+version = "1.2.0"
 
 
 # ANSI color codes
