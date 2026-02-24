@@ -1,0 +1,2 @@
+[console_scripts]
+occt = occt.__main__:main
